@@ -4,24 +4,18 @@
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
 
 # Шапка скрипта
-	echo " $(printBMagenta '  *** Прокси ***')"
-
-
+	echo " $(printBMagenta ' Прокси    ')"
 # Основное меню
 	mainmenu() {
+		echo "$(printBGreen '1 ')Настроить"
+		echo "$(printBYellow '2 ')Просмотреть статус"
+		echo "$(printBYellow '3 ')Помощь"
+		echo "$(printBRed '4 ')Удалить"
 		echo
-		echo "$(printBCyan '            -->') $(printBYellow ' 1)') $(printBGreen    ' Настроить')"
+		echo "$(printBBlue '5 ')Назад"
+		echo "$(printBRed '0 ')Выход"
 		echo
-		echo "$(printBCyan '            -->') $(printBYellow ' 2)')  Просмотреть статус"
-		echo
-		echo "$(printBCyan '            -->') $(printBYellow ' 3)')  Помощь"
-		echo
-		echo "$(printBCyan '            -->') $(printBRed     ' 4)  Удалить')"
-		echo
-		echo "$(printBBlue '            <--  5)  Назад')"
-		echo "$(printBRed        '                 0)  Выход')"
-		echo
-		echo -ne "$(printBGreen ' Введите цифру:') $(printYellowBlink '-->') "
+		echo -ne "$(printBGreen 'Ввод:')$(printYellowBlink '|>') "
 
 #	Свойства меню
 	read -r ans
@@ -173,3 +167,4 @@ $(printBYellow '----------------------------------------------------------------
 
 		mainmenu
 		}
+		mainmenu
