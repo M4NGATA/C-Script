@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Подгрузка общих функций и цвета
-	clear && source <(curl -s https://raw.githubusercontent.com/dzhagerr/xl1/main/xscript/function/common.sh) && printlogo
+	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
 
 # Шапка скрипта
 	echo " $(printBCyan '                 =====================')"
