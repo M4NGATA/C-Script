@@ -4,19 +4,18 @@
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
 
 # Шапка скрипта
-	echo " $(printBMagenta ' Прокси    ')"
+	echo "$(printBMagenta ' Прокси    ')"
 # Основное меню
 	mainmenu() {
-		echo "$(printBGreen '1 ')Настроить"
-		echo "$(printBYellow '2 ')Просмотреть статус"
-		echo "$(printBYellow '3 ')Помощь"
-		echo "$(printBRed '4 ')Удалить"
-		echo
-		echo "$(printBBlue '5 ')Назад"
-		echo "$(printBRed '0 ')Выход"
-		echo
-		echo -ne "$(printBGreen 'Ввод:')$(printYellowBlink '|>') "
-
+		echo "$(printBGreen ' 1 ')Настроить"
+		echo "$(printBYellow ' 2 ')Просмотреть статус"
+		echo "$(printBYellow ' 3 ')Помощь"
+		echo "$(printBRed ' 4 ')Удалить"
+		echo ' --------'
+		echo "$(printBBlue ' 5 ')Назад"
+		echo "$(printBRed ' 0 ')Выход"
+		echo ' --------'
+		echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ':')"
 #	Свойства меню
 	read -r ans
 		case $ans in
@@ -42,16 +41,13 @@
 			;;
 
 			0)
-			echo $(printBCyan '	"Bye bye."')
+			echo $(printBCyan '"Bye bye."')
 			exit
 			;;
 
 			*)
-			clear && printlogo && echo
-			echo "$(printBYellow ' ============================================================')"
-			echo "$(printBRed '		           Неверный запрос !')"
-			echo "$(printBYellow ' ============================================================')"
-			echo
+			clear && printlogo
+			echo "$(printBRed ' Неверный запрос!')"
 			mainmenu
 			;;
 
