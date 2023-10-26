@@ -12,6 +12,55 @@ printlogo() {
 }
 #------------------------------------------------------------------#
 
+#---------------------Функции цвета для текста---------------------#
+
+    #Обычный цвет:
+
+	printBlack () { printf "${BLACK}%s${RESET}\n" "$1"; }
+	printRed () { printf "${RED}%s${RESET}\n" "$1"; }
+	printGreen () { printf "${GREEN}%s${RESET}\n" "$1"; }
+	printYellow () { printf "${YELLOW}%s${RESET}\n" "$1"; }
+	printBlue () { printf "${BLUE}%s${RESET}\n" "$1"; }
+	printMagenta () { printf "${MAGENTA}%s${RESET}\n" "$1"; }
+	printCyan () { printf "${CYAN}%s${RESET}\n" "$1"; }
+	printWhite () { printf "${WHITE}%s${RESET}\n" "$1"; }
+
+	#Темный цвет:
+
+	printBlack () { printf "${BLACK}%s${RESET}\n" "$1"; }
+	printRed () { printf "${RED}%s${RESET}\n" "$1"; }
+	printGreen () { printf "${GREEN}%s${RESET}\n" "$1"; }
+	printYellow () { printf "${YELLOW}%s${RESET}\n" "$1"; }
+	printBlue () { printf "${BLUE}%s${RESET}\n" "$1"; }
+	printMagenta () { printf "${MAGENTA}%s${RESET}\n" "$1"; }
+	printCyan () { printf "${CYAN}%s${RESET}\n" "$1"; }
+	printWhite () { printf "${WHITE}%s${RESET}\n" "$1"; }
+
+	# Цветом текста (жирным) (bold):
+
+	printBRed () { printf "${BRED}%s${RESET}\n" "$1"; }
+	printBGreen () { printf "${BGREEN}%s${RESET}\n" "$1"; }
+	printBYellow () { printf "${BYELLOW}%s${RESET}\n" "$1"; }
+	printBBlue () { printf "${BBLUE}%s${RESET}\n" "$1"; }
+	printBMagenta () { printf "${BMAGENTA}%s${RESET}\n" "$1"; }
+	printBCyan () { printf "${BCYAN}%s${RESET}\n" "$1"; }
+
+
+	printRedBlink () { printf "${BLINK}${RED}%s${RESET}\n" "$1"; }
+	printGreenBlink () { printf "${BLINK}${GREEN}%s${RESET}\n" "$1"; }
+	printYellowBlink () { printf "${BLINK}${YELLOW}%s${RESET}\n" "$1"; }
+	printBlueBlink () { printf "${BLINK}${BLUE}%s${RESET}\n" "$1"; }
+	printMagentaBlink () { printf "${BLINK}${MAGENTA}%s${RESET}\n" "$1"; }
+	printCyanBlink () { printf "${BLINK}${CYAN}%s${RESET}\n" "$1"; }
+	printWhiteBlink () { printf "${BLINK}${WHITE}%s${RESET}\n" "$1"; }
+
+	printBRedBlink () { printf "${BLINK}${BRED}%s${RESET}\n" "$1"; }
+	printBGreenBlink () { printf "${BLINK}${BGREEN}%s${RESET}\n" "$1"; }
+	printBTYellow () { printf "${TBYELLOW}%s${RESET}\n" "$1"; }
+#------------------------------------------------------------------#
+
+
+
 #--------------------Свойства и цвет для текста--------------------#
 		BOLD='\033[1m'			#	${BOLD}			# жирный шрифт (интенсивный цвет)
 		DBOLD='\033[2m'			#	${DBOLD}		# полу яркий цвет (тёмно-серый, независимо от цвета)
