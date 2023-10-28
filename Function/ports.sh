@@ -1,44 +1,55 @@
 #!/bin/bash
 
-while true; do
-    clear
-    echo "========== Настройка портов в Linux =========="
-    echo "1. Открыть порт"
-    echo "2. Закрыть порт"
-    echo "3. Проверить статус портов"
-    echo "4. Выход"
-    echo "=============================================="
-    echo -n "Выберите опцию [1-4]: "
+# Подгрузка общих функций и цвета
+	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
+# Шапка скрипта
+	echo "$(printBMagenta 'НАСТРОЙКА ПОРТОВ')"
+# Основное меню
+mainmenu() {
+	echo "$(printBGreen ' 1 ')Открыть порт"
+	echo "$(printBGreen ' 2 ')Закрыть порт"
+	echo "$(printBGreen ' 3 ')Проверить статус портов"
+	echo ' --------'
+	echo "$(printBBlue ' 4 ')Назад"
+	echo "$(printBRed ' 0 ')Выход"
+	echo ' --------'
+	echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ':')"
+#	Свойства меню
+	read -r ans
+		case $ans in
 
-    read option
+		1)
+		echo -n "Введите номер порта для открытия: "
+		read port
+		sudo ufw allow $port
+		echo "Порт $port открыт"
+		mainmenu
+		;;
 
-    case $option in
-        1)
-            echo -n "Введите номер порта для открытия: "
-            read port
-            sudo ufw allow $port
-            echo "Порт $port открыт"
-            read -p "Нажмите любую клавишу, чтобы продолжить..."
-            ;;
-        2)
-            echo -n "Введите номер порта для закрытия: "
-            read port
-            sudo ufw deny $port
-            echo "Порт $port закрыт"
-            read -p "Нажмите любую клавишу, чтобы продолжить..."
-            ;;
-        3)
-            sudo ufw status numbered
-            read -p "Нажмите любую клавишу, чтобы продолжить..."
-            ;;
-        4)
-            break
-            ;;
-        *)
-            echo "Некорректный ввод. Попробуйте ещё раз."
-            read -p "Нажмите любую клавишу, чтобы продолжить..."
-            ;;
-    esac
-done
+		2)
+		echo -n "Введите номер порта для закрытия: "
+		read port
+		sudo ufw deny $port
+		echo "Порт $port закрыт"
+		mainmenu
+		;;
 
-echo "Спасибо за использование скрипта. До свидания!"
+		3)
+		sudo ufw status numbered
+		mainmenu
+		;;
+
+		4)
+		back
+		;;
+
+		*)
+		clear && printlogo
+		echo "$(printBRed ' Неверный запрос!')"
+		mainmenu
+		;;
+
+		esac
+}
+
+mainmenu

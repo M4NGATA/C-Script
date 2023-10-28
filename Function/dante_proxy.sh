@@ -4,7 +4,7 @@
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
 
 # Шапка скрипта
-	echo "$(printBMagenta ' Прокси    ')"
+	echo "$(printBMagenta ' ПРОКСИ    ')"
 # Основное меню
 	mainmenu() {
 		echo "$(printBGreen ' 1 ')Настроить"
