@@ -3,14 +3,15 @@
 # Подгрузка общих функций и цвета
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
 # Шапка скрипта
-	echo "$(printBMagenta ' ОСНОВНОЕ МЕНЮ')"
+	echo "$(printBMagenta ' СЕРВЕР')"
 # Основное меню
 	mainmenu() {
-		echo "$(printBGreen ' 1 ')Новости"
-		echo "$(printBGreen ' 2 ')Ноды"
-		echo "$(printBGreen ' 3 ')Смартконтракты"
-		echo "$(printBGreen ' 4 ')Сервер"
+		echo "$(printBGreen ' 1 ')Системный монитор"
+		echo "$(printBGreen ' 2 ')Прокси"
+		echo "$(printBGreen ' 3 ')Настройка портов"
+		echo "$(printBGreen ' 4 ')VPN"
 		echo ' --------'
+		echo "$(printBRed ' 9 ')Назад"
 		echo "$(printBRed ' 0 ')Выход"
 		echo ' --------'
 		echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ':')"
@@ -34,7 +35,7 @@
 			server
 			;;
 
-			5)
+			9 )
 			back
 			;;
 
