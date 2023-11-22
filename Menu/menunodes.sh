@@ -13,12 +13,12 @@
 		echo "$(printBGreen ' 5)') Elixir"
 		echo "$(printBGreen ' 6)') Holograph"
 		echo "$(printBGreen ' 7)') Fleek"
-		echo
+		echo ' ---------'
 		echo "$(printBGreen ' 8)') $(printBYellow 'Архив')"
-		echo ' --------'
+		echo ' ---------'
 		echo "$(printBBlue ' 9)') $(printBYellow 'Назад')"
 		echo "$(printBRed ' 0) Выход')"
-		echo ' --------'
+		echo ' ---------'
 		echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ':')"
 #	Свойства меню
 			read -r ans
