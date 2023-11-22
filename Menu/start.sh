@@ -23,7 +23,7 @@
 			;;
 
 			2)
-			status
+			source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/menunodes.sh)
 			;;
 
 			3)

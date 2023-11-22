@@ -24,8 +24,7 @@ $(printBRed    'Вы действительно хотите удалить Elix
 
 		*)
 		clear
-		printlogo
-		printelixir
+		printlogo && printelixir
 		echo
 		echo
 		echo    -ne "$(printRed '		   Неверный запрос !')"
@@ -36,7 +35,7 @@ $(printBRed    'Вы действительно хотите удалить Elix
 }
 
 no(){
-source <(curl -s https://raw.githubusercontent.com/dzhagerr/xl1/main/xscript/nodes/active/elixir/main.sh)
+source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/Nodes/Active/Elixir/main.sh)
 }
 
 yes(){
@@ -59,7 +58,7 @@ submenu(){
 	read -r ans
 	case $ans in
 		*)
-		source <(curl -s https://raw.githubusercontent.com/dzhagerr/xl1/main/xscript/nodes/active/elixir/main.sh)
+		source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/Nodes/Active/Elixir/main.sh)
 		;;
 	esac
 }
