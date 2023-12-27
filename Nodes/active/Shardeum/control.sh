@@ -1,39 +1,36 @@
 #!/bin/bash
-
-# Подгрузка общих функций и цвета
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
-
-# Шапка скрипта
-	echo "$(printBMagenta ' SHARDEUM    ')"
-# Основное меню
-	mainmenu() {
-		echo "$(printBGreen ' 1 ')Stake"
-		echo "$(printBGreen ' 2 ')Unstake"
-		echo "$(printBGreen ' 3 ')Stake Info"
-		echo ' --------'
-		echo "$(printBGreen ' 4 ')Validator status"
-		echo "$(printBGreen ' 5 ')pm2 list"
-		echo "$(printBGreen ' 6 ')Version info"
-		echo "$(printBGreen ' 7 ')Autostart Validator"
-		echo ' --------'
-		echo "$(printBGreen ' 8 ')Ввести адрес Metamask"
-		echo "$(printBGreen ' 9 ')Ввести закрытый ключ Metamask"
-		echo ' --------'
-		echo "$(printBGreen ' 10 ')Operator GUI start"
-		echo "$(printBGreen ' 11 ')Operator CLI start"
-		echo ' --------'
-		echo "$(printBBlue ' 12 ')Назад"
-		echo "$(printBRed ' 0  ')Выход"
-		echo ' --------'
-		echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ':')"
-		read -r ans
+mainmenu() {
+	echo "$(printBCyan ' SHARDEUM')"
+	echo "$(printBGreen 'CLI')"
+	echo "$(printBGreen ' 1 ')Stake"
+	echo "$(printBGreen ' 2 ')Unstake"
+	echo "$(printBGreen ' 3 ')Stake Info"
+	echo "$(printBGreen 'Validator')"
+	echo "$(printBGreen ' 4 ')Validator status"
+	echo "$(printBGreen ' 5 ')pm2 list"
+	echo "$(printBGreen ' 6 ')Version info"
+	echo "$(printBGreen ' 7 ')Autostart Validator"
+	echo "$(printBGreen 'Connect Wallet')"
+	echo "$(printBGreen ' 8 ')Ввести адрес Metamask"
+	echo "$(printBGreen ' 9 ')Ввести закрытый ключ Metamask"
+	echo "$(printBGreen 'System')"
+	echo "$(printBGreen ' 11 ')Operator GUI start"
+	echo "$(printBGreen ' 12 ')Operator CLI start"
+	echo ' --------'
+	echo "$(printBBlue '  0 ')Назад"
+	echo "$(printBRed ' 10 ')Выход"
+	echo ' --------'
+	echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ': ')"
+#	Свойства меню
+	read -r ans
 	case $ans in
 		1)
 		stake
 		;;
 
 		2)
-		unstake
+		Unstake
 		;;
 
 		3)
@@ -64,28 +61,24 @@
 		privkey
 		;;
 
-		10)
+		11)
 		guistart
 		;;
 
-		11)
+		12)
 		clistart
 		;;
 
-		12)
-		back
+		0)
+		source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh)
 		;;
 
-		0)
-		echo $(printBCyan '"Bye bye."')
-		rm x-l1bra
-		exit
+		10)
+		echo $(printBCyan '"Bye bye."') && exit
 		;;
 
 		*)
-		clear && printlogo
-			echo "$(printBRed ' Неверный запрос!')"
-			mainmenu
+		clear && printlogo && echo "$(printBRed ' Неверный запрос!')" && mainmenu
 		;;
 	esac
 }
@@ -101,10 +94,9 @@ autostart() {
     sudo apt-get install screen
   fi
 
-  curl -sS -o autostart_shardeum.sh https://raw.githubusercontent.com/dzhagerr/xl1/main/xscript/nodes/active/shardeum/autostart_shardeum.sh && chmod +x autostart_shardeum.sh
+  curl -sS -o autostart_shardeum.sh https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/autostart_shardeum.sh && chmod +x autostart_shardeum.sh
   screen -dmS autostart_shardeum bash autostart_shardeum.sh
   printlogo
-  printshardium
   echo
   echo "    Автостарт валидатора запущен в screen!"
   echo
@@ -112,7 +104,7 @@ autostart() {
 }
 
 stake(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	read -r -p "
 $(printCyan 'Введите количество монет SHM :')  " VAR2
@@ -123,7 +115,7 @@ $(printCyan 'Введите количество монет SHM :')  " VAR2
 }
 
 unstake(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	read -r -p "
 $(printBYellow 'Вы можете вывести все монеты со стейка просто нажав Enter или
@@ -134,7 +126,7 @@ $(printBYellow 'Вы можете вывести все монеты со сте
 	mainmenu
 }
 stakeinfo(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "operator-cli stake_info "$METAMASK""
 	echo
@@ -142,7 +134,7 @@ stakeinfo(){
 }
 
 status(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "operator-cli status"
 	echo
@@ -150,7 +142,7 @@ status(){
 }
 
 pm2(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "pm2 ls"
 	echo
@@ -158,7 +150,7 @@ pm2(){
 }
 
 version(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "operator-cli version"
 	echo
@@ -166,7 +158,7 @@ version(){
 }
 
 privkey(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo -ne "
 $(printCyan 'Вставте приватный ключ Metamask') "
 	read -r PRIV_KEY
@@ -176,7 +168,7 @@ $(printCyan 'Вставте приватный ключ Metamask') "
 }
 
 metamask(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo -ne "
 $(printCyan 'Вставте адрес Metamask') "
 	read -r METAMASK
@@ -186,7 +178,7 @@ $(printCyan 'Вставте адрес Metamask') "
 }
 
 guistart(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "operator-cli gui start"
 	echo
@@ -194,15 +186,11 @@ guistart(){
 }
 
 clistart(){
-	clear && printlogo && printshardium
+	clear && printlogo
 	echo
 	docker exec -i shardeum-dashboard /bin/bash -c "operator-cli start"
 	echo
 	mainmenu
-}
-
-back(){
-source <(curl -s https://raw.githubusercontent.com/dzhagerr/xl1/main/xscript/nodes/active/shardeum/main.sh)
 }
 
 mainmenu
