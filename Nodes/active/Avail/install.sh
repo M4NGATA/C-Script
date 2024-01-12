@@ -86,18 +86,17 @@ cd
 submenu
 }
 
-ubmenu(){
+submenu(){
 
 	    echo "$(printBGreen    'УСТАНОВКА ЗАВЕРШЕНА........') $(printBGreenBlink '!!!') "
 	    echo "$(printGreen  '--------------------------------------')"
  		echo "$(printBGreen ' 1 ')Просмотреть логи"
- 		echo "$(printBGreen ' 2 ')Проверить синхронизацию"
- 		echo "$(printBGreen ' 3 ')В меню"
+ 		echo "$(printBGreen ' 2 ')В меню"
         echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ': ')"
 	read -r ans
 	case $ans in
 		1)
-		sudo journalctl -u availd -f -o cat
+		subsubmenu
 		;;
 		2)
 		source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh)
@@ -115,7 +114,7 @@ subsubmenu(){
 		read -r ans
 		case $ans in
 			*)
-			sudo journalctl -u babylon.service -f --no-hostname -o cat
+			sudo journalctl -u availd -f -o cat
 			submenu
 			;;
 	esac
