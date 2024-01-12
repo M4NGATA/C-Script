@@ -14,9 +14,9 @@ mainmenu() {
 read -r ans
 	case $ans in
 		1)
-        source <(curl -s https://raw.githubusercontent.com/M4NGATA/X-Script/main/Nodes/active/Avail/install.sh)
+        source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/install.sh)
 		;;
-        
+
 		2)
 		clear && printlogo && mainmenu
 		;;
