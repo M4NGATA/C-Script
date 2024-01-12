@@ -1,3 +1,4 @@
+#!/bin/bash
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
     mainmenu() {
 		echo "$(printBYellow ' BABYLON')"
