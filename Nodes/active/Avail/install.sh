@@ -1,7 +1,7 @@
 #!/bin/bash
 	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
     mainmenu() {
-		echo "$(printBYellow ' BABYLON')"
+		echo "$(printBYellow ' AVAIL')"
 		echo "$(printGreen  '--------------------------------------')"
         echo "$(printYellow 'Рекомендуемые требования к оборудованию.')"
 		echo "$(printBCyan  '	4CPU 8RAM 200GB')"
