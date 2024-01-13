@@ -92,7 +92,7 @@ token(){
 		clear && printlogo
         echo -ne "$(printBYellow ' 1bbn = 1000000ubbn')"
         read -r -p "  Введите количество монет ubbn:  " VAR3
-		babylond tx epoching redelegate $(babylond keys show wallet --bech val -a) bbnvaloper1m29dx2h8krydg3ayrnmehs3eywwjxzfun2kp80 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
+		babylond tx epoching redelegate $(babylond keys show wallet --bech val -a) bbnvaloper1m29dx2h8krydg3ayrnmehs3eywwjxzfun2kp80 "$VAR3"ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
         token
 		;;
 
@@ -100,7 +100,7 @@ token(){
 		clear && printlogo
         echo -ne "$(printBYellow ' 1bbn = 1000000ubbn')"
         read -r -p "  Введите количество монет ubbn:  " VAR3
-		babylond tx epoching redelegate $(babylond keys show wallet --bech val -a) bbnvaloper1wf3j7yy5yraajj89wjvk0a77v2u4vr809n7jnk 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
+		babylond tx epoching redelegate $(babylond keys show wallet --bech val -a) bbnvaloper1wf3j7yy5yraajj89wjvk0a77v2u4vr809n7jnk "$VAR3"ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
         token
 		;;
 
