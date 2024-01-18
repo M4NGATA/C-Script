@@ -38,5 +38,9 @@ read -r ans
 
 
 install(){
-    
+    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/install.sh)
+}
+
+delet(){
+	source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/delet.sh)
 }
