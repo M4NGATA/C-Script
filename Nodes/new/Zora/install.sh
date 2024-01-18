@@ -12,7 +12,7 @@ mainmenu() {
     echo "$(printGreen    ' 1) Да')"
     echo "$(printRed    ' 2) Нет')"
     echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ': ')"
-    read -rp ans
+    read -r ans
 
     case $ans in
         1)
@@ -60,7 +60,7 @@ yes() {
 
     # Ввод URL OP_NODE_L1_ETH_RPC
     echo "Введите URL OP_NODE_L1_ETH_RPC:"
-    read -rp new_value
+    read -r new_value
     sed -i "s|OP_NODE_L1_ETH_RPC=.*|OP_NODE_L1_ETH_RPC=$new_value|g" .env
 
     # Запуск Docker Compose
