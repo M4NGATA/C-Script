@@ -44,3 +44,5 @@ install(){
 delet(){
 	source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/delet.sh)
 }
+
+mainmenu
