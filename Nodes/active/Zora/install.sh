@@ -66,6 +66,7 @@ yes() {
     # Запуск Docker Compose
     if docker-compose up --build -d; then
         docker ps
+		cd
         subnmenu
     else
         echo "$(printBRed 'Ошибка при запуске Docker Compose!')"
@@ -79,7 +80,7 @@ subnmenu() {
 
     case $ans in
         *)
-            source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh)
+           	source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh)
             ;;
     esac
 }
