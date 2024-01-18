@@ -6,6 +6,7 @@ mainmenu() {
     echo "$(printBCyan ' ZORA')"
     echo "$(printBGreen ' 1 ')Установить"
     echo "$(printBGreen ' 2 ')Удалить"
+	echo "$(printBGreen ' 3 ')Инфо"
     echo ' ---------'
     echo "$(printBBlue '  0 ')Назад"
 	echo "$(printBRed ' 10 ')Выход"
@@ -20,6 +21,10 @@ read -r ans
 
 		2)
 		    delet
+		;;
+
+		3)
+		    info
 		;;
 
 		0)
@@ -45,4 +50,15 @@ delet(){
 	source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/delet.sh)
 }
 
+info(){
+	clear && printlogo
+	echo "$(printBYellow ' -------------------------------------')"
+	echo Сеть Zora - это быстрая, экономичная и масштабируемая Layer 2,
+	echo Многие Layer 2 в настоящее время ориентированы на DeFi, тогда как
+	echo сеть Zora представляет собой экосистему, в которой приоритет отдается NFT.
+	echo "$(printBYellow ' -------------------------------------')"
+	mainmenu
+}
+
+   
 mainmenu

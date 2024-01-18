@@ -28,7 +28,7 @@ mainmenu() {
 }
 
 no() {
-    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh)
+    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh)
 }
 
 yes() {

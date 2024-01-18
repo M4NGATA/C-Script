@@ -29,7 +29,7 @@
 
 
 no(){
-    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/main.sh)
+    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh)
 }
 
 yes(){
