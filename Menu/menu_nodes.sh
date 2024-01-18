@@ -38,7 +38,7 @@
 			source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh)
 			;;
 
-			5)
+			6)
 			source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh)
 			;;
 
