@@ -56,7 +56,7 @@ echo "$(printBGreen ' Download and build binaries...')"
         rm -rf babylon
         git clone https://github.com/babylonchain/babylon.git
         cd babylon
-        git checkout v0.7.2
+        git checkout v0.8.3
 
 # Build binariesecho 
 make build
