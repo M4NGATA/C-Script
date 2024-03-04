@@ -14,6 +14,7 @@ if [[ $choice =~ ^[Yy]$ ]]; then
     echo "Starting Babylon node installation..."
 else
     echo "Installation aborted."
+    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/main.sh)
     exit 1
 fi
 
