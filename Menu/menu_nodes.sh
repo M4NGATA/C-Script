@@ -20,7 +20,7 @@ mainmenu() {
     echo " ---------"
     read -p "Enter action number: " ans
     case $ans in
-        1) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/main.sh) ;;
+        1) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/main.sh) ;;
         2) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh) ;;
         3) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh) ;;
         4) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
