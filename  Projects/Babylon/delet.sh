@@ -1,7 +1,5 @@
-#!/bin/bash
-	clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Common/theme.sh) && printlogo
+#!/bin/bash -e
 mainmenu() { 
-	echo "$(printBYellow ' BABYLON')"
   	echo "$(printBYellow 'Вы действительно хотите удалить Babylon') $(printBRedBlink '!!!')"
 
 	echo "$(printBRed '1) Да')"
@@ -25,15 +23,13 @@ clear && printlogo
 echo -ne "	
 
 $(printBYellow 'Удаляем.....!')"
-cd $HOME
-sudo systemctl stop babylon.service
-sudo systemctl disable babylon.service
+sudo systemctl disable babylon
 sudo rm /etc/systemd/system/babylon.service
 sudo systemctl daemon-reload
-rm -f $(which babylond)
-rm -rf $HOME/.babylond
-rm -rf $HOME/babylon
-submenu
+rm -rf $HOME/.babylond 
+rm -rf babylon
+sudo rm -rf $(which babylond)
+cd $HOME
 }
 
 submenu(){
