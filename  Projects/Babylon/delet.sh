@@ -10,21 +10,14 @@ mainmenu() {
 	echo -ne "$(printBGreen ' Ввод')$(printGreenBlink ': ')"
 	read -r ans
 	case $ans in
-		1)
-		yes
-		;;
-		2)
-		no
-		;;
-
-		*)
-		clear && printlogo && echo "$(printBRed ' Неверный запрос!')" && mainmenu
-		;;
+		1) yes ;;
+		2) no ;;
+		*) clear && printlogo && echo "$(printBRed ' Неверный запрос!')" && mainmenu ;;
 	esac
 }
 
 no(){
-source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/main.sh)
+	source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/main.sh)
 }
 
 yes(){

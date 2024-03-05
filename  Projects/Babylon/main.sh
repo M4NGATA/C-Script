@@ -1,6 +1,4 @@
 #!/bin/bash -e
-
-# Function to print main menu
 mainmenu() { 
 clear && echo -e "\e[1;33m
 ╔╗ ╔═╗╔╗ ╦ ╦╦  ╔═╗╔╗╔
@@ -18,9 +16,9 @@ clear && echo -e "\e[1;33m
     read -r ans
 
     case $ans in
-        1) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/control.sh) ;;
-        2) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/install.sh) ;;
-        3) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Babylon/delete.sh) ;;
+        1) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/manage.sh) ;;
+        2) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/install.sh) ;;
+        3) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/delete.sh) ;;
         4) info ;;
         0) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/menu_nodes.sh) ;;
         10) echo "Bye bye." && exit ;;
