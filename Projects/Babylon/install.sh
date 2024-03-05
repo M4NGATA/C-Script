@@ -2,7 +2,7 @@
 
 echo -e "\nTo proceed with Babylon node installation, recommended resources are:"
 echo -e "\e[1;32mRecommended: 4 CPU, 32 GB RAM, 1 TB NVMe\e[0m"
-echo -e "\e[1;31mMinimum: 4 CPU, 16 GB RAM, 1 TB NVMe\e[0m"
+echo -e "\e[1;31mMinimum: 4 CPU, 16 GB RAM, 800 GB SSD or NVMe\e[0m"
 
 read -p "Do you want to proceed with Babylon node installation? [Y/n]: " choice
 choice="${choice:-y}"

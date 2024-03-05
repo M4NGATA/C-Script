@@ -7,7 +7,7 @@ clear && echo -e "\e[1;33m
 ╚═╝╩ ╩╚═╝ ╩ ╩═╝╚═╝╝╚╝\e[0m"
     echo " 1. Token Management"
     echo " 2. Wallet"
-    echo " 3. Validator"
+    echo " 3. Validator" 
     echo " ---------"
     echo " 0. Back"
     echo " 10. Exit"
