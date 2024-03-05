@@ -1,26 +1,4 @@
 #!/bin/bash -e
-
-echo -e "\e[1;35m
-╔╦╗╔═╗╦╦╔═╔═╗
- ║ ╠═╣║╠╩╗║ ║
- ╩ ╩ ╩╩╩ ╩╚═╝\e[0m"
-
-echo -e "\nTo proceed with \e[1;35mTaiko\e[0m node installation, recommended resources are:"
-echo -e "\e[1;32mRecommended: 4 CPU, 16 GB RAM, 1 TB NVMe\e[0m"
-echo -e "\e[1;31mMinimum: 4 CPU, 8 GB RAM, 400 GB SSD or NVMe\e[0m"
-
-read -p "Do you want to proceed with Taiko node installation? [Y/n]: " choice
-choice="${choice:-y}"
-if [[ $choice =~ ^[Yy]$ ]]; then
-    echo "Starting Taiko node installation..."
-else
-    echo "Installation aborted."
-    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
-    exit 1
-fi
-
-#!/bin/bash -e
-
 echo -e "\e[1;35m
 ╔╦╗╔═╗╦╦╔═╔═╗
  ║ ╠═╣║╠╩╗║ ║
@@ -41,28 +19,25 @@ else
 fi
 
 # Install dependencies
-    sudo apt-get install ca-certificates curl gnupg lsb-release
-    sudo mkdir -p /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Update apt index
-    sudo apt-get update
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common git
 
 # Install Docker
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
 
 # Install Docker Compose
-    sudo apt install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
-# Set permissions
-    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+# Add current user to Docker group
+sudo usermod -aG docker $USER
 
-# Clone eth-docker repository
-    git clone https://github.com/eth-educators/eth-docker
-    cd eth-docker
+# Clone Taiko node repository
+git clone https://github.com/taikoxyz/simple-taiko-node.git
+cd simple-taiko-node
 
-# Configure eth-docker
-    ./ethd config
+# Configure Taiko node
+cp .env.sample .env
