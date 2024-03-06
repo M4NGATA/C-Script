@@ -24,7 +24,7 @@ choice="${choice:-y}"
     read -p $'\e[1;33mEnter L1_ENDPOINT_WS: \e[0m' l1_endpoint_ws
 
 # Ask for L1_PROPOSER_PRIVATE_KEY
-    read -p $'\e[1;33mEnter L1_PROPOSER_PRIVATE_KEY: \e[0m' L1_PROPOSER_PRIVATE_KEY
+    # read -p $'\e[1;33mEnter L1_PROPOSER_PRIVATE_KEY: \e[0m' L1_PROPOSER_PRIVATE_KEY
 
 # Install dependencies
     sudo apt update
@@ -53,10 +53,10 @@ choice="${choice:-y}"
 # Update .env file with provided values
     sed -i "s|L1_ENDPOINT_HTTP=|L1_ENDPOINT_HTTP=$l1_endpoint_http|" .env
     sed -i "s|L1_ENDPOINT_WS=|L1_ENDPOINT_WS=$l1_endpoint_ws|" .env
-    sed -i "s|L1_PROPOSER_PRIVATE_KEY=|L1_PROPOSER_PRIVATE_KEY=$L1_PROPOSER_PRIVATE_KEY|" .env
-    sed -i "s|BLOCK_PROPOSAL_FEE=1|BLOCK_PROPOSAL_FEE=1000|" .env
-    sed -i "s|PROVER_ENDPOINTS=|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
-    sed -i "s|ENABLE_PROPOSER=false|ENABLE_PROPOSER=true|" .env
+    # sed -i "s|L1_PROPOSER_PRIVATE_KEY=|L1_PROPOSER_PRIVATE_KEY=$L1_PROPOSER_PRIVATE_KEY|" .env
+    # sed -i "s|BLOCK_PROPOSAL_FEE=1|BLOCK_PROPOSAL_FEE=1000|" .env
+    # sed -i "s|PROVER_ENDPOINTS=|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
+    # sed -i "s|ENABLE_PROPOSER=false|ENABLE_PROPOSER=true|" .env
 
 # Start Taiko node using docker-compose
     echo -e "\nStarting Taiko node..."
@@ -71,3 +71,4 @@ choice="${choice:-y}"
 # Display the dashboard URL
     echo -e "\nTaiko node dashboard is accessible at:"
     echo -e "http://$ip:3001/d/L2ExecutionEngine/l2-execution-engine-overview?orgId=1&refresh=10s"
+    
