@@ -54,10 +54,10 @@ choice="${choice:-y}"
     sed -i "s|L1_ENDPOINT_HTTP=|L1_ENDPOINT_HTTP=$l1_endpoint_http|" .env
     sed -i "s|L1_ENDPOINT_WS=|L1_ENDPOINT_WS=$l1_endpoint_ws|" .env
     sed -i "s|L1_PROPOSER_PRIVATE_KEY=|L1_PROPOSER_PRIVATE_KEY=$L1_PROPOSER_PRIVATE_KEY|" .env
-    sed -i "s|BLOCK_PROPOSAL_FEE=|BLOCK_PROPOSAL_FEE=1000|" .env
-    sed -i "s|PROVER_ENDPOINTS=|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
+    sed -i "s|BLOCK_PROPOSAL_FEE=|BLOCK_PROPOSAL_FEE=100|" .env
+    sed -i "s|PROVER_ENDPOINTS=1|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
     sed -i "s|ENABLE_PROPOSER=false|ENABLE_PROPOSER=true|" .env
-    
+
 # Start Taiko node using docker-compose
     echo -e "\nStarting Taiko node..."
     docker-compose up -d
