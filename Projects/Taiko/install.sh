@@ -9,8 +9,15 @@ echo -e "\nTo proceed with \e[1;35mTaiko\e[0m node installation, recommended res
 echo -e "\e[1;32mRecommended: 4 CPU, 16 GB RAM, 1 TB NVMe\e[0m"
 echo -e "\e[1;31mMinimum: 4 CPU, 8 GB RAM, 400 GB SSD or NVMe\e[0m"
 
-read -p $'\e[1;33mEnter L1_ENDPOINT_HTTP: \e[0m' l1_endpoint_http
-read -p $'\e[1;33mEnter L1_ENDPOINT_WS: \e[0m' l1_endpoint_ws
+read -p "Do you want to proceed with Taiko node installation? [Y/n]: " choice
+choice="${choice:-y}"
+    if [[ $choice =~ ^[Yy]$ ]]; then
+        echo "Starting Taiko node installation..."
+    else
+        echo "Installation aborted."
+        source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
+        exit 1
+    fi
 
 # Install dependencies
     sudo apt update
@@ -36,6 +43,10 @@ read -p $'\e[1;33mEnter L1_ENDPOINT_WS: \e[0m' l1_endpoint_ws
 # Configure Taiko node
     cp .env.sample .env
 
+# Ask for L1_ENDPOINT_HTTP and L1_ENDPOINT_WS values
+    read -p $'\e[1;33mEnter L1_ENDPOINT_HTTP: \e[0m' l1_endpoint_http
+    read -p $'\e[1;33mEnter L1_ENDPOINT_WS: \e[0m' l1_endpoint_ws
+
 # Update .env file with provided values
     sed -i "s|L1_ENDPOINT_HTTP=|L1_ENDPOINT_HTTP=$l1_endpoint_http|" .env
     sed -i "s|L1_ENDPOINT_WS=|L1_ENDPOINT_WS=$l1_endpoint_ws|" .env
@@ -53,6 +64,3 @@ read -p $'\e[1;33mEnter L1_ENDPOINT_WS: \e[0m' l1_endpoint_ws
 # Display the dashboard URL
     echo -e "\nTaiko node dashboard is accessible at:"
     echo -e "http://$ip:3001/d/L2ExecutionEngine/l2-execution-engine-overview?orgId=1&refresh=10s"
-
-
-
