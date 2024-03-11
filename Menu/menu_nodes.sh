@@ -12,6 +12,7 @@ mainmenu() {
     echo " 4) Zora"
     echo " 5) Elixir"
     echo " 6) Holograph"
+    echo " 7) Taiko"
     echo " ---------"
     echo " 9) Archive"
     echo " ---------"
@@ -26,6 +27,7 @@ mainmenu() {
         4) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
         5) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh) ;;
         6) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh) ;;
+        7) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh) ;;
         9) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/archive_nodes.sh) ;;
         0) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/start.sh) ;;
         10) echo "До свидания." && exit ;;
