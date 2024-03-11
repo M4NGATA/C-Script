@@ -18,7 +18,7 @@ clear && echo -e "\e[1;33m
         1) token ;;
         2) wallet ;;
         3) valitator ;;
-        0)  source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Babylon/main.sh) ;;
+        0) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Babylon/main.sh) ;;
         10) echo "Bye bye." && exit ;;
         *) clear && echo "Invalid input!" && mainmenu ;;
     esac

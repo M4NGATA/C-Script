@@ -6,8 +6,8 @@ echo -e "\e[1;35m
  ╩ ╩ ╩╩╩ ╩╚═╝\e[0m"
 
 echo -e "\nTo proceed with \e[1;35mTaiko\e[0m node installation, recommended resources are:"
-echo -e "\e[1;32mRecommended: 4 CPU, 16 GB RAM, 1 TB NVMe\e[0m"
-echo -e "\e[1;31mMinimum: 4 CPU, 8 GB RAM, 400 GB SSD or NVMe\e[0m"
+echo -e "\e[1;32mRecommended: 4 CPU, 16 GB RAM, 1 TB SDD\e[0m"
+echo -e "\e[1;31mMinimum: 4 CPU, 8 GB RAM, 1 TB SDD\e[0m"
 
 read -p "Do you want to proceed with Taiko node installation? [Y/n]: " choice
 choice="${choice:-y}"
@@ -54,21 +54,22 @@ choice="${choice:-y}"
     sed -i "s|L1_ENDPOINT_HTTP=|L1_ENDPOINT_HTTP=$l1_endpoint_http|" .env
     sed -i "s|L1_ENDPOINT_WS=|L1_ENDPOINT_WS=$l1_endpoint_ws|" .env
     sed -i "s|L1_PROPOSER_PRIVATE_KEY=|L1_PROPOSER_PRIVATE_KEY=$L1_PROPOSER_PRIVATE_KEY|" .env
-    sed -i "s|BLOCK_PROPOSAL_FEE=1|BLOCK_PROPOSAL_FEE=1000|" .env
-    sed -i "s|PROVER_ENDPOINTS=|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
+    sed -i "s|BLOCK_PROPOSAL_FEE=1|BLOCK_PROPOSAL_FEE=30|" .env
+    sed -i "s|PROVER_ENDPOINTS=http://taiko_client_prover_relayer:9876|PROVER_ENDPOINTS=http://taiko-a6-prover.zkpool.io:9876|" .env
     sed -i "s|ENABLE_PROPOSER=false|ENABLE_PROPOSER=true|" .env
 
 # Start Taiko node using docker-compose
     echo -e "\nStarting Taiko node..."
-    docker-compose up -d
+    docker compose up -d
 
 # Get the current IP address
     ip=$(curl -s https://ipinfo.io/ip)
 
+# install complete
 # Print completion message in green color
     echo -e "\n\e[1;32mTaiko node installation completed successfully!\e[0m"
-
-# Display the dashboard URL
     echo -e "\nTaiko node dashboard is accessible at:"
     echo -e "http://$ip:3001/d/L2ExecutionEngine/l2-execution-engine-overview?orgId=1&refresh=10s"
-    
+    read -p "Press Enter to continue..."
+    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
+
