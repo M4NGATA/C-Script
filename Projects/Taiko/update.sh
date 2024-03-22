@@ -8,7 +8,7 @@ echo -e "\e[1;35m
 read -p "Continue update? (y/n): " answer
 if [[ $answer != "y" && $answer != "Y" ]]; then
     echo "Обновление отменено."
-    source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
+    clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
     exit 1
 fi
 
