@@ -1,5 +1,4 @@
 #!/bin/bash
-
 mainmenu() {
     clear && echo -e "\e[1;32m
 ╔╗╔╔═╗╔╦╗╔═╗╔═╗
@@ -21,17 +20,17 @@ mainmenu() {
     echo " ---------"
     read -p "Enter action number: " ans
     case $ans in
-        1) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/main.sh) ;;
-        2) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh) ;;
-        3) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh) ;;
-        4) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
-        5) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh) ;;
-        6) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh) ;;
-        7) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh) ;;
+        1) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/main.sh) ;;
+        2) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh) ;;
+        3) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh) ;;
+        4) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
+        5) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh) ;;
+        6) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh) ;;
+        7) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh) ;;
         9) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/archive_nodes.sh) ;;
         0) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/start.sh) ;;
-        10) echo "До свидания." && exit ;;
-        *) echo "Неверный запрос!" && mainmenu ;;
+        10) echo "Bye bye." && exit ;;
+        *) clear && echo "Invalid input!" && mainmenu ;;
     esac
 }
 
