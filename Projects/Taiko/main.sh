@@ -1,4 +1,5 @@
 #!/bin/bash -e
+mainmenu() {
 echo -e "\e[1;35m
 ╔╦╗╔═╗╦╦╔═╔═╗
  ║ ╠═╣║╠╩╗║ ║
