@@ -20,12 +20,12 @@ mainmenu() {
     echo " ---------"
     read -p "Enter action number: " ans
     case $ans in
-        1) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/main.sh) ;;
-        2) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh) ;;
-        3) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh) ;;
-        4) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
-        5) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh) ;;
-        6) clear && ssource <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh) ;;
+        1) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Babylon/main.sh) ;;
+        2) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Shardeum/main.sh) ;;
+        3) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Avail/main.sh) ;;
+        4) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Zora/main.sh) ;;
+        5) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Elixir/main.sh) ;;
+        6) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Nodes/active/Holograph/main.sh) ;;
         7) clear && source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh) ;;
         9) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/archive_nodes.sh) ;;
         0) source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Menu/start.sh) ;;

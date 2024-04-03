@@ -18,5 +18,5 @@ docker compose down && docker compose up -d
 cd
 
 echo -e "\e[1;32m\nThe update is completed. To continue click Enter.\e[0m"
-read -p ""
+read -p "Press Enter to continue..."
 source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)

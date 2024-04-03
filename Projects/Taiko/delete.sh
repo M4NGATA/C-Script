@@ -22,6 +22,3 @@ choice="${choice:-y}"
     echo -e "\e[1;32mTaiko node deletion completed.\e[0m Press Enter to continue..."
     read
     source <(curl -s https://raw.githubusercontent.com/M4NGATA/C-Script/main/Projects/Taiko/main.sh)
-
-
-
