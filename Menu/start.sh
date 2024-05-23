@@ -19,6 +19,7 @@ mainmenu() {
         10) echo "Goodbye." && exit ;;
         *) echo "Invalid request!" && mainmenu ;;
     esac
+    done
 }
 
 mainmenu
